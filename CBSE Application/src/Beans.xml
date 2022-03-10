@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="menuitembean" class="Base.MenuItem" scope="prototype"
+		autowire-candidate="false">
+		<constructor-arg index="0" type="int" value="10"
+			name="newID" />
+		<constructor-arg index="1" type="String" value=""
+			name="newName" />
+		<constructor-arg index="2" type="double" value="10.0"
+			name="newPrice" />
+		<constructor-arg index="3" type="byte" value="10"
+			name="newType" />
+	</bean>
+
+	<bean id="orderdetailbean" class="Order.OrderDetail"
+		scope="prototype" autowire-candidate="false">
+		<constructor-arg index="0" type="MenuItem"
+			ref="menuitembean" name="menuItemBean" />
+		<constructor-arg index="1" type="byte" value="10"
+			name="newQuantity" />
+	</bean>
+
+	<bean id="orderbean" class="Order.Order" scope="prototype"
+		autowire-candidate="false">
+		<constructor-arg index="0" type="int" value="10"
+			name="newStaffID" />
+		<constructor-arg index="1" type="String" value=""
+			name="newStaffName" />
+	</bean>
+
+	<bean id="staffbean" class="Staff.Staff" scope="prototype"
+		autowire-candidate="false">
+		<constructor-arg index="0" type="int" value="10"
+			name="newID" />
+		<constructor-arg index="1" type="String" value=""
+			name="newLastName" />
+		<constructor-arg index="2" type="String" value=""
+			name="newFirstName" />
+		<constructor-arg index="3" type="String" value=""
+			name="newPassword" />
+	</bean>
+
+
+	<bean id="managerbean" class="Staff.Manager" scope="prototype"
+		autowire-candidate="false">
+		<constructor-arg index="0" type="int" value="10"
+			name="newID" />
+		<constructor-arg index="1" type="String" value=""
+			name="newLastName" />
+		<constructor-arg index="2" type="String" value=""
+			name="newFirstName" />
+		<constructor-arg index="3" type="String" value=""
+			name="newPassward" />
+	</bean>
+
+</beans>
